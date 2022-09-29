@@ -22,12 +22,7 @@ and the is written in Typescript.
 #### Python consumer
 1. run `poetry install` to install python dependencies
 2. make sure that the docker container are started
-3. run `poetry run python ./src/consumer/python/consumer.py` to start consuming aws kinesis messages 
-
-#### Great help from/ with
-1. https://blacksheephacks.pl/stream-data-with-python-and-aws-kinesis/
-2. https://docs.localstack.cloud/overview/
-3. https://docs.aws.amazon.com/kinesis/index.html
+3. run `poetry run python ./src/consumer/python/consumer.py` to start consuming aws kinesis messages
 
 ## Required Tools 
 
@@ -41,3 +36,8 @@ When you are on Mac you can use Homebrew to install the dependency managers.
 
 ### docker
 install docker: https://docs.docker.com/get-docker/
+
+## Great help from/ with
+1. https://blacksheephacks.pl/stream-data-with-python-and-aws-kinesis/
+2. https://docs.localstack.cloud/overview/
+3. https://docs.aws.amazon.com/kinesis/index.html
