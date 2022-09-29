@@ -1,0 +1,29 @@
+services:
+  aws-kinesis:
+    container_name: "localstack_main"
+    image: localstack/localstack
+    ports:
+      - "127.0.0.1:4566:4566"            # LocalStack Gateway
+      - "127.0.0.1:4510-4559:4510-4559"  # external services port range
+    environment:
+      - SERVICES=kinesis
+      - DOCKER_HOST=unix:///var/run/docker.sock
+      - PERSISTENCE=1
+    volumes:
+      - ./infra/init-scripts/localstack:/docker-entrypoint-initaws.d
+      - /var/run/docker.sock:/var/run/docker.sock
+    healthcheck:
+      test: "curl --fail http://127.0.0.1:4566/health || exit 1"
+      interval: 10s
+      timeout: 10s
+      retries: 5
+
+  kinesis-producer:
+    container_name: "python-producer"
+    build:
+      context: .
+      dockerfile: infra/docker/python-producer/Dockerfile
+    command: python producer.py
+    depends_on:
+       aws-kinesis:
+         condition: service_healthy

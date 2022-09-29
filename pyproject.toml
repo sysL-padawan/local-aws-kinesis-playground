@@ -1,0 +1,12 @@
+[tool.poetry]
+name = "local-aws-kinesis-playground"
+version = "0.0.1"
+description = "A POC to test and play a bit with AWS Kinesis in different languages"
+authors = ["sysL-padawan"]
+license = "MIT"
+readme = "README.md"
+keywords = ["aws", "kinesis", "playground"]
+
+[tool.poetry.dependencies]
+python = "^3.8.13"
+boto3="1.24.56"

@@ -1,0 +1,20 @@
+{
+  "name": "local-aws-kinesis-playground",
+  "version": "0.0.1",
+  "description": "A POC to test and play a bit with AWS Kinesis in different languages",
+  "license": "MIT",
+  "author": {
+    "name": "sysL-padawan"
+  },
+  "dependencies": {
+    "@aws-sdk/client-kinesis": "^3.154.0"
+  },
+  "devDependencies": {
+    "@types/node": "^18.7.8",
+    "ts-node": "^10.9.1",
+    "typescript": "^4.7.4"
+  },
+  "scripts": {
+    "consume": "ts-node src/consumer/typescript/consumer.ts"
+  }
+}
